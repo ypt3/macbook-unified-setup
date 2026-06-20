@@ -41,6 +41,22 @@ You need to be running macOS Mojave or newer. Install all software below **in or
 
 ---
 
+## Oh My Zsh
+
+Oh My Zsh is a framework for managing your Zsh configuration with themes, plugins, and helpers.
+
+> Oh My Zsh will replace your existing `~/.zshrc`. Any customizations you've already added will need to be re-added afterward.
+
+1. Install Oh My Zsh:
+
+   ```shell
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   ```
+
+2. Restart your terminal. Your prompt should now show the Oh My Zsh theme.
+
+---
+
 ## Homebrew & Git
 
 1. Install Homebrew and `git`:

@@ -60,6 +60,15 @@ else
   fail "Default shell is '$current_shell' (expected /bin/zsh) — run: chsh -s /bin/zsh"
 fi
 
+# ── Oh My Zsh ────────────────────────────────────────────────────────────────
+header "Oh My Zsh"
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  omz_ver="$(head -1 "$HOME/.oh-my-zsh/oh-my-zsh.sh" 2>/dev/null | grep -o 'v[0-9][^ ]*' || true)"
+  pass "Oh My Zsh installed${omz_ver:+ ($omz_ver)}"
+else
+  fail "Oh My Zsh not installed — run: sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+fi
+
 # ── Homebrew ──────────────────────────────────────────────────────────────────
 header "Homebrew"
 if command -v brew &>/dev/null; then
