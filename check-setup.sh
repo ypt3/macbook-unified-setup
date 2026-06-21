@@ -204,6 +204,38 @@ else
   warn "\$HOME/go/bin not in PATH — add to ~/.zshrc: export PATH=\"\$HOME/go/bin:\$PATH\""
 fi
 
+# ── AWS CLI ──────────────────────────────────────────────────────────────────
+header "AWS CLI"
+if command -v aws &>/dev/null; then
+  pass "aws: $(aws --version 2>&1 | head -1)"
+else
+  fail "aws CLI not installed — run: brew install awscli"
+fi
+
+# ── GCP CLI ───────────────────────────────────────────────────────────────────
+header "GCP CLI"
+if command -v gcloud &>/dev/null; then
+  pass "gcloud: $(gcloud --version 2>/dev/null | head -1)"
+else
+  fail "gcloud not installed — run: brew install --cask google-cloud-sdk"
+fi
+
+# ── Terraform ────────────────────────────────────────────────────────────────
+header "Terraform"
+if command -v terraform &>/dev/null; then
+  pass "terraform: $(terraform version 2>/dev/null | head -1)"
+else
+  fail "terraform not installed — run: brew install terraform"
+fi
+
+# ── Vagrant ───────────────────────────────────────────────────────────────────
+header "Vagrant"
+if command -v vagrant &>/dev/null; then
+  pass "vagrant: $(vagrant --version 2>/dev/null)"
+else
+  fail "vagrant not installed — run: brew install --cask vagrant"
+fi
+
 # ── Summary ───────────────────────────────────────────────────────────────────
 echo -e "\n${BOLD}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 if [ "$FAIL" -eq 0 ]; then

@@ -327,6 +327,112 @@ source ~/.zshrc
 
 ---
 
+## AWS CLI
+
+The AWS Command Line Interface lets you interact with AWS services from your terminal.
+
+### Install the AWS CLI
+
+```shell
+brew install awscli
+```
+
+### Verify the installation
+
+```shell
+aws --version   # should print aws-cli/2.x.x ...
+```
+
+### Configure credentials (optional at setup time)
+
+When you're ready to connect to an AWS account, run:
+
+```shell
+aws configure
+```
+
+You'll be prompted for your Access Key ID, Secret Access Key, default region, and output format.
+
+---
+
+## GCP CLI
+
+The Google Cloud CLI (`gcloud`) lets you interact with Google Cloud services from your terminal.
+
+### Install the GCP CLI
+
+```shell
+brew install --cask google-cloud-sdk
+```
+
+### Initialize and authenticate
+
+```shell
+gcloud init
+```
+
+This walks you through logging in and setting a default project and region.
+
+### Verify the installation
+
+```shell
+gcloud --version   # should print Google Cloud SDK x.x.x
+```
+
+---
+
+## Terraform
+
+Terraform is an infrastructure-as-code tool installed via Homebrew.
+
+### Install Terraform
+
+```shell
+brew install terraform
+```
+
+### Verify the installation
+
+```shell
+terraform --version   # should print Terraform v1.x.x
+```
+
+### Enable shell autocomplete
+
+```shell
+terraform -install-autocomplete
+```
+
+Restart your terminal for autocomplete to take effect.
+
+---
+
+## Vagrant
+
+Vagrant is a tool for building and managing virtual machine environments.
+
+### Install Vagrant
+
+```shell
+brew install --cask vagrant
+```
+
+### Verify the installation
+
+```shell
+vagrant --version   # should print Vagrant 2.x.x
+```
+
+### Enable shell autocomplete
+
+```shell
+vagrant autocomplete install --zsh
+```
+
+Restart your terminal for autocomplete to take effect.
+
+---
+
 You're all set! All required languages, runtimes, and tools are now installed.
 
 ---
